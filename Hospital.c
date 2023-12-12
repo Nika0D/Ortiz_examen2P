@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
-    int n=999;
+    int n=0;
     srand(time(NULL));
     /*MATRIZ A ES INGRESOS B EGRESOS*/
     int matA[30][12];
     int matB[30][12];
-    int matC[30][12];
     for (int i = 0; i < 30; i++)
         {
         for (int j = 0; j < 12; j++)
@@ -15,15 +14,8 @@ int main(){
             matB[i][j]=rand()%51;
         }
     }
-    for (int i = 0; i < 30; i++)
-        {
-        for (int j = 0; j < 12; j++)
-        {
-            matC[i][j]=matA[i][j]+matB[i][j];
-        }
-    }
     printf("ingrese la opcion 1 o 2");
-    scanf("%d", n);
+    scanf("%d", &n);
     if (n==1)
     {
         printf("Ingresos\n");
@@ -46,19 +38,25 @@ int main(){
         }
     }else if (n==2)
     {
+        printf("Suma de ingresos\n");
         for (int i = 0; i < 30; i++)
         {
-            for (int j = 0; j < 12; j++)
+            int sumaFila = 0;
+            for (int j = 0; j < 12; j++) 
             {
-                for (int i = 0; i < 30; i++) {
-                int sumaF = 0;
-
+                sumaFila += matA[i][j];
             }
+            printf("Producto %d: %d\n", i + 1, sumaFila);
+        }
+        printf("Suma de egresos\n");
+        for (int i = 0; i < 30; i++)
+        {
+            int sumaFila = 0;
+            for (int j = 0; j < 12; j++) 
+            {
+                sumaFila += matB[i][j];
+            }
+            printf("Producto %d: %d\n", i + 1, sumaFila);
         }
     }
-    
-       
-    
-
-    return 0;
 }
