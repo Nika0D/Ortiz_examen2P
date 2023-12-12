@@ -21,6 +21,7 @@ int main(){
         printf("Ingresos\n");
         for (int i = 0; i < 30; i++)
         {
+            printf("Producto %d:", i + 1);
             for (int j = 0; j < 12; j++)
             {
                 printf(" %d ", matA[i][j]);
@@ -30,6 +31,7 @@ int main(){
         printf("Egresos\n");
         for (int i = 0; i < 30; i++)
         {
+            printf("Producto %d:", i + 1);
             for (int j = 0; j < 12; j++)
             {
                 printf(" %d ", matB[i][j]);
